@@ -1,0 +1,22 @@
+.fix_slider {
+	max-height: 300px;
+	min-height: 300px;
+}
+
+.img_slider {
+	height: 100%;
+	width: auto;
+	display: block;
+	max-height: 200px;
+	min-height: 200px;	
+}
+
+.text_slider{
+	text-align: center;
+}
+
+
+.carousel-indicators{
+	position: absolute;
+	top: 10px;
+}

@@ -1,0 +1,9 @@
+{% extends "index_base.html" %}
+
+{% block content %}
+    <h2>{{hotel.title}}</h2>
+	<p>{{hotel.descripcion}}<p>
+	<p>{{hotel.pub_date}}<p>
+	{% load static from staticfiles %}
+	<img src="{% static "img/"%}{{hotel.logo}}" alt="Hi!" />
+{% endblock %}

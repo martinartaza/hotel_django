@@ -1,0 +1,60 @@
+{% extends "index_base.html" %}
+
+{% block content %}
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, iamherox!</h1>
+        <p>Yo no un sitio completo diseñado en python debido a que eh trabajado en equipos
+          de mantenimiento sin embargo justo estaba creando esto en bootstrap para mejorar
+          un poco la parte de front-end. Aca abajo se puede ver una lista de preguntas que
+          se deben llenar atravez del administrador http://127.0.0.1:8001/admin/polls/question/
+          y cada una envia a un link distinto</p>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner fix_slider" role="listbox">
+
+          {% if list_hotel %}
+            {% load static from staticfiles %}
+            {% for hotel in list_hotel %}
+                {% if hotel.id == 1 %}
+                  <div class="item active text_slider" >
+                {% else %}
+                <div class="item text_slider" >
+                {% endif %}
+                    <img class = "img_slider" src="{% static "img/"%}{{hotel.logo}}" alt="{{hotel.title}}" />
+                <h3 class = "text_slider">{{hotel.title}}</h3>
+                <a href="/hotel/{{hotel.id}}/">{{hotel.description}}</a>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p>No hotel are available.</p>
+          {% endif %}
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+{% endblock %}
+
+
+

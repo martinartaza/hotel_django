@@ -1,0 +1,12 @@
+{% if list_hotel %}
+    <ul>
+    {% for hotel in list_hotel %}
+    	<p> hola <p>
+        <li><a href="/polls/{{ list_hotel.id }}/">{{ list_hotel.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hotel are available.</p>
+{% endif %}
+
+
